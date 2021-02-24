@@ -1,0 +1,120 @@
+#my-account-wp p.my-account-section-title {
+    font-size: 19px;
+}
+
+#my-account-wp .section-head {
+    border-bottom: 1px solid #cabfbf;
+    padding-bottom: 15px;
+}
+
+#my-account-wp .my-account-profile {
+    padding: 30px 35px 30px 35px;
+}
+
+.account-fullname,
+.account-email,
+.account-phone,
+.account-address,
+.account-birthday {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.my-account-profile label.input-label {
+    min-width: 170px;
+    color: #725050;
+}
+
+input#account-fullname,
+input#account-email,
+input#account-phone,
+input#account-address,
+input#datepicker {
+    width: 300px;
+    padding: 5px 50px 5px 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+input#account-fullname:focus,
+input#account-email:focus,
+input#account-phone:focus,
+input#account-address:focus {
+    border: 1px solid #ee4d2d;
+}
+
+button.btn-save {
+    padding: 5px 20px;
+    border: none;
+    border-radius: 3px;
+    background: #ee4d2d;
+    color: #fff;
+    font-size: 16px;
+}
+
+
+/* User Slidebar  */
+
+.userpage-sidebar .user-page-header {
+    padding: 18px;
+    border-bottom: 1px solid #cabfbf;
+}
+
+.userpage-sidebar .user-page-header p.user-name {
+    font-size: 16px;
+}
+
+ul.user-page-menu {
+    margin-top: 20px;
+}
+
+ul.user-page-menu li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    padding: 5px 5px;
+}
+
+ul.user-page-menu li a {
+    color: #272727;
+}
+
+ul.user-page-menu i.fa {
+    margin-right: 25px;
+}
+
+ul.user-page-menu li:hover {
+    background-color: rgb(236, 236, 236);
+}
+
+span.status-order {
+    font-style: italic;
+}
+
+.info-order {
+    margin-top: 25px;
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.title-header p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.info-order .receiver-address,
+.info-order .note,
+.info-order .type-payment {
+    width: 33%;
+    margin: 5px;
+}
+
+.detail-content {
+    background: #f7f7f7;
+    min-height: 120px;
+    padding: 10px;
+}
+
+.detail-order thead {
+    background: #f7f7f7;
+}

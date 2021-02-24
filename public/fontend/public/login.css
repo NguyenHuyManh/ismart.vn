@@ -1,0 +1,95 @@
+.form-login,
+.form-register {
+    width: 500px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid #ee4d2d;
+}
+
+.header {
+    background: #e55039;
+    /*background: #e74c3c;*/
+}
+
+.header .title {
+    font-size: 24px;
+    padding: 30px;
+    color: white;
+    margin-top: 0;
+}
+
+.content {
+    padding: 30px;
+}
+
+.content p.reset-password {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.content .info-email,
+.content .info-password,
+.content .info-fullname,
+.content .info-phone,
+.content .password_confirmation {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+label {
+    font-size: 16px;
+    font-weight: normal !important;
+}
+
+input#email,
+input#password,
+input#name,
+input#phone,
+input#password_confirmation {
+    width: 100%;
+    padding: 6px 50px 6px 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+input#email:focus,
+input#password:focus,
+input#name:focus,
+input#phone:focus,
+input#password_confirmation:focus {
+    border: 1px solid #ee4d2d;
+}
+
+.submit-register {
+    margin-bottom: 20px;
+}
+
+button.btn-register,
+button.btn-login {
+    width: 100%;
+    padding: 10px 12px;
+    border: none;
+    background: #ee4d2d;
+    color: #fff;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.info-password,
+.password_confirmation {
+    position: relative;
+}
+
+.info-password i.fa.fa-eye,
+.password_confirmation i.fa.fa-eye-slash {
+    position: absolute;
+    top: 58%;
+    right: 20px;
+    cursor: pointer;
+}
+
+.submit-login,
+.submit-register {
+    margin-bottom: 10px;
+}
