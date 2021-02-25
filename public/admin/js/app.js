@@ -42,6 +42,19 @@ $(document).ready(function() {
         readURL(this);
     });
 
+    function readURL2(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#imgOut2').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]); // convert to base64 string
+        }
+    }
+    $("#imgInp2").change(function() {
+        readURL2(this);
+    });
+
     //Tooltip
     $(document).ready(function() {
         $('[data-toggle="tooltip"]').tooltip();
@@ -76,7 +89,7 @@ $(document).ready(function() {
     });
 
     //Checkbox phân quyền
-    $('.checkbox-parent').on('click', function(){
+    $('.checkbox-parent').on('click', function() {
         $(this).parents('.card-wrapper').find('.checkbox-childrent').prop('checked', $(this).prop('checked'));
     });
 });
