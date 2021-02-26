@@ -188,12 +188,14 @@
             //Reset image befor add
             $('.add').on('click', function(){
                 $('#imgInp2').val('');
+                $('#exampleCheck1').prop("checked", false);
                 $('#imgOut2').attr('src', 'http://localhost:8080/Laravel/ismart.vn/public/admin/images/images.png');
             });
             
             // Sửa banner
             $('.edit-banner').on('click', function(event){
                 event.preventDefault();
+                $('#imgInp').val('');
                 let imgPath = $(this).parent().parent().find('.img-thumbnail').attr('src');
                 let statusItem = $(this).parent().parent().find('.update-status').attr('data-status');
                 let bannerId = $(this).attr('data-id');
