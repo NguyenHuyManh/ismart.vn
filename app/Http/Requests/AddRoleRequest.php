@@ -35,7 +35,7 @@ class AddRoleRequest extends FormRequest
         return [
             'name.required' => 'Tên nhóm quyền không được để trống!',
             'display_name.required' => 'Mô tả nhóm quyền không được để trống!',
-            'permission_id.required' => 'Vui lòng lựa chọn!'
+            'permission_id.required' => 'Vui lòng lựa chọn các chức năng để ủy quyền!'
         ];
     }
 }

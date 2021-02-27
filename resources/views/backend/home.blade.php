@@ -9,7 +9,7 @@
 
 <body>
 <div id="warpper" class="nav-fixed">
-    <nav class="topnav shadow navbar-light bg-white d-flex">
+    <nav class="topnav shadow navbar-light">
         @include('backend.elements.menu-top')
     </nav>
 

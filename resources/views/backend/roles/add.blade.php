@@ -10,6 +10,15 @@
             <div class="card-header font-weight-bold">
                 <h5 class="m-0">Thêm nhóm quyền</h5>
             </div>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="card-body">
                 <form action="{{ route('admin.role.store') }}" method="POST">
                     @csrf
@@ -18,17 +27,11 @@
                             <div class="form-group">
                                 <label for="name" class="font-weight-bold">Tên nhóm quyền:</label>
                                 <input class="form-control" type="text" name="name" id="name" value="{{ old('name') }}">
-                                @error('name')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="display_name" class="font-weight-bold">Mô tả nhóm quyền:</label>
                                 <textarea class="form-control" name="display_name" id="display_name"
                                           rows="3">{{ old('display_name') }}</textarea>
-                                @error('display_name')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
                             </div>
                         </div>
                         <div class="col-12">
@@ -59,9 +62,6 @@
                                     </div>
                                 </div>
                             @endforeach
-                            @error('permission_id')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Thêm mới</button>

@@ -32,11 +32,12 @@ a:hover {
     color: #8f8f8f;
 }
 
-.nav-right {
+
+/* .nav-right {
     flex: 1;
     justify-content: space-between;
     display: flex;
-}
+} */
 
 #sidebar {
     width: 15rem;
@@ -71,6 +72,11 @@ a:hover {
     right: 0;
     left: 0;
     z-index: 1030;
+    background-color: #3c8dbc;
+}
+
+.navbar-brand a {
+    color: #fff;
 }
 
 ul#sidebar-menu * {
@@ -88,12 +94,12 @@ ul#sidebar-menu * {
     position: relative;
 }
 
-.nav-link.active > a,
-.nav-link:hover > li > a {
+.nav-link.active>a,
+.nav-link:hover>li>a {
     color: #0061f2;
 }
 
-.nav-link > li > a > i {
+.nav-link>li>a>i {
     color: #787272;
     font-size: 18px;
 }
@@ -203,7 +209,7 @@ ul.top-product-view .product_info {
     margin-left: 20px;
 }
 
-.info-content{
+.info-content {
     margin: 2% 25%;
     padding: 20px;
     border: 1px solid #dfe3e9;
@@ -221,4 +227,3 @@ div .add-category {
     margin-right: 20px;
     margin-bottom: 20px;
 }
-

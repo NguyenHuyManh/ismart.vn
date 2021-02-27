@@ -8,6 +8,7 @@ use App\Http\Requests\EditRoleRequest;
 use App\Permission;
 use App\Role;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminRoleController extends Controller
 {
@@ -69,7 +70,8 @@ class AdminRoleController extends Controller
     {
         if ($request->ajax()) {
             $role = $this->role->find($id)->delete();
-
+            DB::table('permission_role')->where('role_id', $id)->delete();
+            
             return response()->json([
                 'role' => $role,
                 'message' => 'ok'
