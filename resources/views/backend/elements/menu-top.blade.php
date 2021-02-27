@@ -17,9 +17,10 @@
             Hello! {{ Auth::user()->name }}
         </button>
         <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="{{ route('admin.user.info_account', ['id' => Auth::user()->id]) }}">Tài
-                khoản</a>
-            <a class="dropdown-item" href="{{route('admin.logout')}}">Đăng xuất</a>
+            <a class="dropdown-item" href="{{ route('admin.user.info_account', ['id' => Auth::user()->id]) }}">
+                <i class="fas fa-user-alt pr-2"></i>Tàikhoản
+            </a>
+            <a class="dropdown-item" href="{{route('admin.logout')}}"><i class="fas fa-sign-out-alt pr-2"></i>Đăng xuất</a>
         </div>
     </div>
 </div>

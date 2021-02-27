@@ -32,7 +32,7 @@
                             <div class="form-group row">
                                 <label for="slogan" class="font-weight-bold col-sm-2 col-form-label">Slogan:</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="slogan" id="slogan" value="{{ $item->slogan }}">
+                                    <textarea name="slogan" id="slogan" cols="30" rows="4" class="form-control">{{ $item->slogan }}</textarea>
                                 </div>
                             </div>
                             <div class="form-group row">

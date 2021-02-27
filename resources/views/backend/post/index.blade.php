@@ -45,8 +45,8 @@
             @endif
             <div class="card-body">
                 <div class="analytic">
-                    <a href="{{route('admin.post.index')}}" class="text-primary">Tất cả<span class="text-muted">({{$count[0]}})</span></a>
-                    <a href="{{route('admin.post.trashed')}}" class="text-primary">Thùng rác<span class="text-muted">({{$count[1]}})</span></a>
+                    <a href="{{route('admin.post.index')}}" class="btn btn-primary">Tất cả <span class="text-primary badge badge-pill bg-white">{{$count[0]}}</span></a>
+                    <a href="{{route('admin.post.trashed')}}" class="btn btn-info">Thùng rác <span class="text-info badge badge-pill bg-white">{{$count[1]}}</span></a>
                 </div>
                 <form action="{{route('admin.post.action')}}">
                     <div class="form-action form-inline py-3">

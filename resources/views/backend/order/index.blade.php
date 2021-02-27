@@ -39,15 +39,15 @@
             </div>
             <div class="card-body">
                 <div class="analytic mb-3">
-                    <a href="{{ route('admin.order.index') }}" class="text-primary">Tất cả<span class="text-muted">({{ $count_order[0]}})</span></a>
-                    <a href="{{ request()->fullUrlWithQuery(['status' => 'finish'])}}" class="text-primary">Đã giao<span
-                            class="text-muted">({{ $count_order[1]}})</span></a>
-                    <a href="{{ request()->fullUrlWithQuery(['status' => 'processing'])}}" class="text-primary">Đang xử
-                        lý<span class="text-muted">({{ $count_order[2]}})</span></a>
-                    <a href="{{ request()->fullUrlWithQuery(['status' => 'no-process'])}}" class="text-primary">Chưa xử
-                        lý<span class="text-muted">({{ $count_order[3]}})</span></a>
-                    <a href="{{ request()->fullUrlWithQuery(['status' => 'cancel'])}}" class="text-primary">Đơn hàng hủy<span
-                            class="text-muted">({{ $count_order[4]}})</span></a>
+                    <a href="{{ route('admin.order.index') }}" class="btn btn-primary">Tất cả <span class="text-primary badge badge-pill bg-white">{{ $count_order[0]}}</span></a>
+                    <a href="{{ request()->fullUrlWithQuery(['status' => 'finish'])}}" class="btn btn-info">Đã giao <span
+                            class="text-primary badge badge-pill bg-white">{{ $count_order[1]}}</span></a>
+                    <a href="{{ request()->fullUrlWithQuery(['status' => 'processing'])}}" class="btn btn-info">Đang xử
+                        lý <span class="text-primary badge badge-pill bg-white">{{ $count_order[2]}}</span></a>
+                    <a href="{{ request()->fullUrlWithQuery(['status' => 'no-process'])}}" class="btn btn-info">Chưa xử
+                        lý <span class="text-primary badge badge-pill bg-white">{{ $count_order[3]}}</span></a>
+                    <a href="{{ request()->fullUrlWithQuery(['status' => 'cancel'])}}" class="btn btn-info">Đơn hàng hủy <span
+                            class="text-primary badge badge-pill bg-white">{{ $count_order[4]}}</span></a>
                 </div>
                 <table class="table table-hover table-checkall text-center">
                     <thead>

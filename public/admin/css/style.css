@@ -141,16 +141,17 @@ ul#sidebar-menu * {
 .analytic a {
     position: relative;
     padding-right: 5px;
-    margin-right: 5px;
+    /* margin-right: 5px; */
 }
 
-.analytic a:not(:last-child):after {
+
+/* .analytic a:not(:last-child):after {
     position: absolute;
     content: '|';
     top: -1px;
     right: -5px;
     color: #8c8c8c;
-}
+} */
 
 .card-body {
     padding: 1rem !important;
