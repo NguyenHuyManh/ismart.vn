@@ -158,15 +158,16 @@
                             <td>
                                 @can('edit-slider')
                                     <a href="{{route('admin.slider.edit', ['id' => $slider->id])}}"
-                                       class="btn btn-success btn-sm rounded-0 text-white edit-slider" data-id="{{ $slider->id }}"
+                                       class="btn btn-success btn-sm rounded text-white edit-slider" data-id="{{ $slider->id }}"
                                        data-toggle="tooltip" data-placement="top" title="Edit"><i
                                             class="fa fa-edit"></i></a>
                                 @endcan
                                 @can('delete-slider')
                                     <a href="{{route('admin.slider.destroy', ['id' => $slider->id])}}"
-                                       class="btn btn-danger btn-sm rounded-0 text-white delete"
-                                       data-toggle="tooltip" data-placement="top" title="Delete"><i
-                                            class="fa fa-trash"></i></a>
+                                       class="btn btn-danger btn-sm rounded text-white delete"
+                                       data-toggle="tooltip" data-placement="top" title="Delete">
+                                       <i class="fas fa-trash-alt"></i>
+                                    </a>
                                 @endcan
                             </td>
                         </tr>

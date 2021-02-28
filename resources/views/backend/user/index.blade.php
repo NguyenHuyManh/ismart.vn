@@ -92,16 +92,16 @@
                             <td>
                                 @can('edit-admin')
                                     <a href="{{ route('admin.user.edit', ['id' => $admin->id]) }}"
-                                       class="btn btn-success btn-sm rounded-0 text-white edit-admin"
+                                       class="btn btn-success btn-sm rounded text-white edit-admin"
                                        data-toggle="tooltip" data-placement="top" title="Edit">
                                         <i class="fa fa-edit"></i>
                                     </a>
                                 @endcan
                                 @can('delete-admin')
                                     <a href="{{ route('admin.user.destroy', ['id' => $admin->id]) }}"
-                                       class="btn btn-danger btn-sm rounded-0 text-white delete"
+                                       class="btn btn-danger btn-sm rounded text-white delete"
                                        data-toggle="tooltip" data-placement="top" title="Delete">
-                                        <i class="fa fa-trash"></i>
+                                       <i class="fas fa-trash-alt"></i>
                                     </a>
                                 @endcan
                             </td>

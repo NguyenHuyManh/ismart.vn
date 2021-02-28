@@ -244,13 +244,33 @@ class AdminProductController extends Controller
     }
 
     //================== Cập nhật nổi bật sản phẩm ==============
-    public function updateHighlight($id)
+    public function updateHighlight(Request $request, $id)
     {
         $product = $this->product->find($id);
-        $product->highlight = !$product->highlight; //Nếu = 1 => 0, ngược lại
+        if($request->highlight == 'yes'){
+            $product->highlight = !$product->highlight; //Nếu highlight = 1 => 0, nếu = 0 => 1
+            $product->save();
+
+            return response()->json([
+                'status' => 'ok',
+                'product' => $product,
+                'html' => '<a href="http://localhost:8080/Laravel/ismart.vn/admin/product/update-highlight/' . $id . '"
+                                class="badge badge-danger update-highlight" data-type_highlight="no"
+                                style="padding: 10px 13px; font-size: 13px;border-radius: 1.25rem !important">Không</a>'
+            ]);
+        }
+
+        $product->highlight = !$product->highlight; //Nếu highlight = 1 => 0, nếu = 0 => 1
         $product->save();
 
-        return back()->with('toast_success', 'Cập nhật trạng thái thành công!');
+        return response()->json([
+            'status' => 'ok',
+            'product' => $product,
+            'html' => '<a href="http://localhost:8080/Laravel/ismart.vn/admin/product/update-highlight/' . $id . '"
+                    class="badge badge-success update-highlight" data-type_highlight="yes"
+                    style="padding: 10px 10px; font-size: 13px;border-radius: 1.25rem !important">Nổi
+                    bật</a>'
+        ]);
     }
 
     // public function paginateAjax(Request $request)

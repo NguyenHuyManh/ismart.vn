@@ -93,7 +93,7 @@
                                 <td>
                                     @can('detail-order')
                                         <a href="{{route('admin.order.show', ['id' => $item->id])}}"
-                                           class="btn btn-primary btn-sm rounded-0 text-white" type="button"
+                                           class="btn btn-primary btn-sm rounded text-white" type="button"
                                            data-toggle="tooltip" data-placement="top" title="Xem"><i
                                                 class="far fa-eye"></i></a>
                                     @endcan
@@ -101,9 +101,9 @@
                                 <td>
                                     @can('delete-order')
                                         <a href="{{ route('admin.order.destroy', ['id' => $item->id]) }}"
-                                           class="btn btn-danger btn-sm rounded-0 text-white delete"
+                                           class="btn btn-danger btn-sm rounded text-white delete"
                                            data-toggle="tooltip"
-                                           data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
+                                           data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i></a>
                                     @endcan
                                 </td>
                             </tr>

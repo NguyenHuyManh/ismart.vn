@@ -159,7 +159,7 @@
                             <td>
                                 @can('edit-banner')
                                     <a href="{{route('admin.banner.edit', ['id' => $item->id])}}"
-                                       class="btn btn-success btn-sm rounded-0 edit-banner" data-toggle="tooltip"
+                                       class="btn btn-success btn-sm rounded edit-banner" data-toggle="tooltip"
                                        data-placement="top" data-id="{{ $item->id }}"
                                        title="Edit">
                                         <i class="fa fa-edit"></i>
@@ -167,9 +167,9 @@
                                 @endcan
                                 @can('delete-banner')
                                     <a href="{{route('admin.banner.destroy', ['id' => $item->id])}}"
-                                       class="btn btn-danger btn-sm rounded-0 delete" data-toggle="tooltip"
+                                       class="btn btn-danger btn-sm rounded delete" data-toggle="tooltip"
                                        data-placement="top" title="Delete">
-                                        <i class="fa fa-trash"></i>
+                                       <i class="fas fa-trash-alt"></i>
                                     </a>
                                 @endcan
                             </td>

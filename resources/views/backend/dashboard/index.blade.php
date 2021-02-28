@@ -134,7 +134,7 @@
                                     <td>{{ $item->created_at->format('H:i d-m-Y') }}</td>
                                     <td>
                                         <a href="{{route('admin.order.show', ['id' => $item->id])}}"
-                                           class="btn btn-primary btn-sm rounded-0 text-white" type="button"
+                                           class="btn btn-primary btn-sm rounded text-white" type="button"
                                            data-toggle="tooltip" data-placement="top" title="Xem"><i
                                                 class="far fa-eye"></i></a>
                                     </td>

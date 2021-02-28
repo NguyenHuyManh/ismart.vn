@@ -112,19 +112,19 @@
                                 </td>
                                 <td>
                                     <a href="{{route('post.show', ['slug' => $post->slug, 'id' => $post->id])}}"
-                                       target="_blank" class="btn btn-primary btn-sm rounded-0 text-white" type="button"
+                                       target="_blank" class="btn btn-primary btn-sm rounded text-white" type="button"
                                        data-toggle="tooltip" data-placement="top" title="Xem" target="_blank"><i
                                             class="far fa-eye"></i></a>
                                     @can('edit-post')
                                         <a href="{{route('admin.post.edit', ['id' => $post->id])}}"
-                                           class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip"
+                                           class="btn btn-success btn-sm rounded" type="button" data-toggle="tooltip"
                                            data-placement="top" title="Edit"><i class="fa fa-edit"></i>
                                         </a>
                                     @endcan
                                     @can('delete-post')
                                         <a href="{{route('admin.post.destroy', ['id' => $post->id])}}"
-                                           class="btn btn-danger btn-sm rounded-0 delete" data-toggle="tooltip"
-                                           data-placement="top" title="Delete"><i class="fa fa-trash"></i>
+                                           class="btn btn-danger btn-sm rounded delete" data-toggle="tooltip"
+                                           data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i>
                                         </a>
                                     @endcan
                                 </td>

@@ -81,16 +81,16 @@
                             </td>
                             <td>
                                 <a href="{{ route('purchase_policy.show', ['slug' => $item->slug, 'id' => $item->id]) }}"
-                                   target="_blank" class="btn btn-primary btn-sm rounded-0 text-white" type="button"
+                                   target="_blank" class="btn btn-primary btn-sm rounded text-white" type="button"
                                    data-toggle="tooltip" data-placement="top" title="Xem" target="_blank"><i
                                         class="far fa-eye"></i></a>
                                 <a href="{{ route('admin.purchase_policy.edit', $item->id) }}"
-                                   class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip"
+                                   class="btn btn-success btn-sm rounded" type="button" data-toggle="tooltip"
                                    data-placement="top" title="Edit"><i class="fa fa-edit"></i>
                                 </a>
                                 <a href="{{ route('admin.purchase_policy.destroy', $item->id) }}"
-                                   class="btn btn-danger btn-sm rounded-0 delete" data-toggle="tooltip"
-                                   data-placement="top" title="Delete"><i class="fa fa-trash"></i>
+                                   class="btn btn-danger btn-sm rounded delete" data-toggle="tooltip"
+                                   data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i>
                                 </a>
                             </td>
                         </tr>

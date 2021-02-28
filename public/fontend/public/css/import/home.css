@@ -75,6 +75,7 @@
 #category-product-wp .list-item>li:hover>a,
 #category-product-wp .list-item .sub-menu>li:hover>a {
     background: #eee;
+    color: #f12a43;
 }
 
 #selling-wp .section-detail {

@@ -3,14 +3,9 @@
         <div class="block" id="info-company">
             <h3 class="title">ISMART</h3>
             <p class="desc">{{ $setting->slogan }}</p>
-            {{--            <div id="payment">--}}
-            {{--                <div class="thumb">--}}
-            {{--                    <img src="{{asset('fontend/public/images/img-foot.png')}}" alt="">--}}
-            {{--                </div>--}}
-            {{--            </div>--}}
         </div>
         <div class="block menu-ft" id="info-shop">
-            <h3 class="title">Thông tin cửa hàng</h3>
+            <h3 class="title">Liên hệ</h3>
             <ul class="list-item">
                 <li>
                     <p>{{ $setting->address }}</p>
@@ -24,7 +19,7 @@
             </ul>
         </div>
         <div class="block menu-ft policy" id="info-shop">
-            <h3 class="title">Chính sách mua hàng</h3>
+            <h3 class="title">Chính sách bán hàng</h3>
             <ul class="list-item">
                 @foreach($purchasePolicy as $item)
                     <li>

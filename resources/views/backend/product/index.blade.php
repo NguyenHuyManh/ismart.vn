@@ -120,32 +120,33 @@
                                         <td>
                                             @if ($product->highlight == 1)
                                                 <a href="{{ route('admin.product.update_highlight', ['id' => $product->id]) }}"
-                                                   class="badge badge-success"
+                                                   class="badge badge-success update-highlight" data-type_highlight="yes"
                                                    style="padding: 10px 10px; font-size: 13px;border-radius: 1.25rem !important">Nổi
                                                     bật</a>
                                             @else
                                                 <a href="{{ route('admin.product.update_highlight', ['id' => $product->id]) }}"
-                                                   class="badge badge-danger"
+                                                   class="badge badge-danger update-highlight" data-type_highlight="no"
                                                    style="padding: 10px 13px; font-size: 13px;border-radius: 1.25rem !important">Không</a>
                                             @endif
 
                                         </td>
                                         <td>
                                             <a href="{{route('product.detail', ['category' => $product->category->slug, 'slug' => $product->slug, 'id' => $product->id])}}"
-                                               class="btn btn-primary btn-sm rounded-0 text-white" type="button"
+                                               class="btn btn-primary btn-sm rounded text-white" type="button"
                                                data-toggle="tooltip" data-placement="top" title="Xem" target="_blank"><i
                                                     class="far fa-eye"></i></a>
                                             @can('edit-product')
                                                 <a href="{{route('admin.product.edit',['id' => $product->id])}}"
-                                                   class="btn btn-success btn-sm rounded-0 text-white" type="button"
+                                                   class="btn btn-success btn-sm rounded text-white" type="button"
                                                    data-toggle="tooltip" data-placement="top" title="Edit"><i
                                                         class="fa fa-edit"></i></a>
                                             @endcan
                                             @can('delete-product')
                                                 <a href="{{route('admin.product.destroy', ['id' => $product->id])}}"
-                                                   class="btn btn-danger btn-sm rounded-0 text-white delete"
-                                                   data-toggle="tooltip" data-placement="top" title="Delete"><i
-                                                        class="fa fa-trash"></i></a>
+                                                   class="btn btn-danger btn-sm rounded text-white delete"
+                                                   data-toggle="tooltip" data-placement="top" title="Delete">
+                                                   <i class="fas fa-trash-alt"></i>
+                                                </a>
                                             @endcan
                                         </td>
                                     </tr>
@@ -193,7 +194,7 @@
             });
         });
 
-        // Cập nhật trạng thái
+        // Cập nhật trạng thái ẩn-hiện
         $(document).on('click', '.update-status', function (e) {
             e.preventDefault();
             let url = $(this).attr('href');
@@ -204,6 +205,27 @@
                 url: url,
                 type: 'Get',
                 data: {status: status},
+                dataType: 'json',
+                success: function (result) {
+                    thisUpdate.parent().html(result.html);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        });
+
+        // Cập nhật highlight
+        $(document).on('click', '.update-highlight', function (e) {
+            e.preventDefault();
+            let url = $(this).attr('href');
+            let typeHighLight = $(this).attr('data-type_highlight');
+            let thisUpdate = $(this);
+
+            $.ajax({
+                url: url,
+                type: 'Get',
+                data: {highlight: typeHighLight},
                 dataType: 'json',
                 success: function (result) {
                     thisUpdate.parent().html(result.html);

@@ -108,20 +108,21 @@
                                 </td>
                                 <td>
                                     <a href="{{route('product.detail', ['category' => $product->category->slug, 'slug' => $product->slug, 'id' => $product->id])}}"
-                                       class="btn btn-primary btn-sm rounded-0 text-white" type="button"
+                                       class="btn btn-primary btn-sm rounded text-white" type="button"
                                        data-toggle="tooltip" data-placement="top" title="Xem" target="_blank"><i
                                             class="far fa-eye"></i></a>
                                     @can('edit-product')
                                         <a href="{{route('admin.product.edit',['id' => $product->id])}}"
-                                           class="btn btn-success btn-sm rounded-0 text-white" type="button"
+                                           class="btn btn-success btn-sm rounded text-white" type="button"
                                            data-toggle="tooltip" data-placement="top" title="Edit"><i
                                                 class="fa fa-edit"></i></a>
                                     @endcan
                                     @can('delete-product')
                                         <a href="{{route('admin.product.destroy', ['id' => $product->id])}}"
-                                           class="btn btn-danger btn-sm rounded-0 text-white delete"
-                                           data-toggle="tooltip" data-placement="top" title="Delete"><i
-                                                class="fa fa-trash"></i></a>
+                                           class="btn btn-danger btn-sm rounded text-white delete"
+                                           data-toggle="tooltip" data-placement="top" title="Delete">
+                                           <i class="fas fa-trash-alt"></i>
+                                        </a>
                                     @endcan
                                 </td>
                             </tr>

@@ -50,9 +50,9 @@
         <a href="{{url('/')}}" title="" id="logo" class="fl-left"><img
                 src="{{url($setting->logo)}}"/></a>
         <div id="search-wp" class="fl-left">
-            <form method="Get" action="{{ route('search.product') }}">
-                <input type="text" name="search" id="s" placeholder="Nhập từ khóa tìm kiếm tại đây!" value="{{ Request::get('search') }}">
-                <button type="submit" id="sm-s">Tìm kiếm</button>
+            <form method="Get" action="{{ route('search.product') }}" class="form-search">
+                <input type="text" name="search" id="s" placeholder="Nhập từ khóa" value="{{ Request::get('search') }}">
+                <button type="submit" id="sm-s"><i class="fa fa-search" aria-hidden="true"></i></button>
             </form>
         </div>
         <div id="action-wp" class="fl-right">
