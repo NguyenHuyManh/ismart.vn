@@ -162,7 +162,7 @@
                                        class="btn btn-success btn-sm rounded edit-banner" data-toggle="tooltip"
                                        data-placement="top" data-id="{{ $item->id }}"
                                        title="Edit">
-                                        <i class="fa fa-edit"></i>
+                                        <i class="fas fa-pencil-alt"></i>
                                     </a>
                                 @endcan
                                 @can('delete-banner')

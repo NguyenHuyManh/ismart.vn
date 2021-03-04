@@ -114,8 +114,9 @@
                                     @can('edit-product')
                                         <a href="{{route('admin.product.edit',['id' => $product->id])}}"
                                            class="btn btn-success btn-sm rounded text-white" type="button"
-                                           data-toggle="tooltip" data-placement="top" title="Edit"><i
-                                                class="fa fa-edit"></i></a>
+                                           data-toggle="tooltip" data-placement="top" title="Edit">
+                                            <i class="fas fa-pencil-alt"></i>   
+                                        </a>
                                     @endcan
                                     @can('delete-product')
                                         <a href="{{route('admin.product.destroy', ['id' => $product->id])}}"

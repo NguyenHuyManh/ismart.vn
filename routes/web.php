@@ -461,7 +461,7 @@ Route::namespace('Backend')->group(function () {
 
 Route::namespace('Fontend')->group(function () {
     Route::group(['prefix' => '/'], function () {
-        Route::get('/', 'HomeController@index');
+        Route::get('/', 'HomeController@index')->name('home.index');
         Route::get('search', 'HomeController@searchProduct')->name('search.product');
 
         //========================================= Đăng nhập - đăng kí ======================================

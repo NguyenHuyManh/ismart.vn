@@ -24,7 +24,7 @@
             </div>
             <div class="card">
                 <div class="card-header font-weight-bold d-flex justify-content-between align-items-center">
-                    <h5 class="m-0 ">Bản đồ</h5>
+                    <h5 class="m-0 ">Bản đồ (Google Maps)</h5>
                 </div>
                 <div class="card-body">
                     <div class="form-group">

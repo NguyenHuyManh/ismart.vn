@@ -159,8 +159,9 @@
                                 @can('edit-slider')
                                     <a href="{{route('admin.slider.edit', ['id' => $slider->id])}}"
                                        class="btn btn-success btn-sm rounded text-white edit-slider" data-id="{{ $slider->id }}"
-                                       data-toggle="tooltip" data-placement="top" title="Edit"><i
-                                            class="fa fa-edit"></i></a>
+                                       data-toggle="tooltip" data-placement="top" title="Edit">
+                                        <i class="fas fa-pencil-alt"></i>  
+                                    </a>
                                 @endcan
                                 @can('delete-slider')
                                     <a href="{{route('admin.slider.destroy', ['id' => $slider->id])}}"

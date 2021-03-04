@@ -94,7 +94,7 @@
                                     <a href="{{ route('admin.user.edit', ['id' => $admin->id]) }}"
                                        class="btn btn-success btn-sm rounded text-white edit-admin"
                                        data-toggle="tooltip" data-placement="top" title="Edit">
-                                        <i class="fa fa-edit"></i>
+                                        <i class="fas fa-pencil-alt"></i>
                                     </a>
                                 @endcan
                                 @can('delete-admin')

@@ -5,7 +5,7 @@
             <p class="desc">{{ $setting->slogan }}</p>
         </div>
         <div class="block menu-ft" id="info-shop">
-            <h3 class="title">Liên hệ</h3>
+            <h3 class="title">Thông tin liên hệ</h3>
             <ul class="list-item">
                 <li>
                     <p>{{ $setting->address }}</p>

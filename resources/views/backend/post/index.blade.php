@@ -118,7 +118,8 @@
                                     @can('edit-post')
                                         <a href="{{route('admin.post.edit', ['id' => $post->id])}}"
                                            class="btn btn-success btn-sm rounded" type="button" data-toggle="tooltip"
-                                           data-placement="top" title="Edit"><i class="fa fa-edit"></i>
+                                           data-placement="top" title="Edit">
+                                           <i class="fas fa-pencil-alt"></i>
                                         </a>
                                     @endcan
                                     @can('delete-post')

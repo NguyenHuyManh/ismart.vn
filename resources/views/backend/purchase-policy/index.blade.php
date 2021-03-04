@@ -86,7 +86,7 @@
                                         class="far fa-eye"></i></a>
                                 <a href="{{ route('admin.purchase_policy.edit', $item->id) }}"
                                    class="btn btn-success btn-sm rounded" type="button" data-toggle="tooltip"
-                                   data-placement="top" title="Edit"><i class="fa fa-edit"></i>
+                                   data-placement="top" title="Edit"><i class="fas fa-pencil-alt"></i>
                                 </a>
                                 <a href="{{ route('admin.purchase_policy.destroy', $item->id) }}"
                                    class="btn btn-danger btn-sm rounded delete" data-toggle="tooltip"

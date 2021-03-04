@@ -58,7 +58,7 @@
                                 <a href="{{ route('admin.role.edit', ['id' => $role->id]) }}"
                                    class="btn btn-success btn-sm rounded text-white edit-admin"
                                    data-toggle="tooltip" data-placement="top" title="Edit">
-                                    <i class="fa fa-edit"></i>
+                                    <i class="fas fa-pencil-alt"></i>
                                 </a>
                                 <a href="{{ route('admin.role.destroy', ['id' => $role->id]) }}"
                                    class="btn btn-danger btn-sm rounded text-white delete"

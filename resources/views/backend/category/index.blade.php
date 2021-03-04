@@ -86,8 +86,9 @@
                                     @can('edit-category')
                                         <a href="{{route('admin.category.edit',['id' => $category->id])}}"
                                            class="btn btn-success btn-sm rounded text-white" type="button"
-                                           data-toggle="tooltip" data-placement="top" title="Edit"><i
-                                                class="fa fa-edit"></i></a>
+                                           data-toggle="tooltip" data-placement="top" title="Edit">
+                                            <i class="fas fa-pencil-alt"></i>  
+                                        </a>
                                     @endcan
                                     @can('delete-category')
                                         <a href="{{route('admin.category.destroy',['id' => $category->id])}}"
