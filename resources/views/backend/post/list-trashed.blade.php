@@ -105,12 +105,12 @@
                                     <span><i class="far fa-clock"></i> {{$post->created_at->format('H:i d-m-Y')}}</span>
                                 </td>
                                 <td>
-                                    @can('delete-post')
+                                    
                                         <a href="{{route('admin.post.destroy', ['id' => $post->id])}}"
                                            class="btn btn-danger btn-sm rounded delete" data-toggle="tooltip"
                                            data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i>
                                         </a>
-                                    @endcan
+                                    
                                 </td>
                             </tr>
                         @endforeach

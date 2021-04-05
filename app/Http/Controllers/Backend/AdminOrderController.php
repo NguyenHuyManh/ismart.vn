@@ -25,13 +25,13 @@ class AdminOrderController extends Controller
         //Thống kê
         $status = $request->input('status'); //Lấy url
         if ($status == 'finish') {
-            $orders = $this->order->where('status', 3)->paginate(20);
+            $orders = $this->order->where('status', 3)->orderBy('id', 'DESC')->paginate(20);
         } elseif ($status == 'processing') {
-            $orders = $this->order->where('status', 2)->paginate(20);
+            $orders = $this->order->where('status', 2)->orderBy('id', 'DESC')->paginate(20);
         } elseif ($status == 'no-process') {
-            $orders = $this->order->where('status', 1)->paginate(20);
+            $orders = $this->order->where('status', 1)->orderBy('id', 'DESC')->paginate(20);
         } elseif ($status == 'cancel') {
-            $orders = $this->order->where('status', 4)->paginate(20);
+            $orders = $this->order->where('status', 4)->orderBy('id', 'DESC')->paginate(20);
         } else {
             $keyword = '';
             if ($request->input('keyword')) {
@@ -124,7 +124,7 @@ class AdminOrderController extends Controller
                         <div class="section1">
                             <div class="sender">
                                 <p>Từ:</p><br>
-                                <p>'.$orderItem->name.'</p> 
+                                <p>'.$orderItem->name.'</p>
                                 <p>Địa chỉ: '.$orderItem->address.'</p>
                                 <p>Số ĐT: '.$orderItem->phone.'</p>
                             </div>
@@ -140,7 +140,7 @@ class AdminOrderController extends Controller
                             foreach($orderDetail as $item){
                                 $output .= '
                                 <p>'.$stt++.'. '.$item->product_name.', SL: '.$item->product_qty.'</p>';
-                            }         
+                            }
                     $output .= '
                         </div>
                             <div class="total-money">

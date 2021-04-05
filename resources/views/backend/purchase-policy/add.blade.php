@@ -19,7 +19,7 @@
                                 <label for="title" class="font-weight-bold">Tiêu đề *:</label>
                                 <input class="form-control" type="text" name="title" value="{{old('title')}}">
                                 @error('title')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                                    <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
@@ -34,7 +34,7 @@
                         <textarea name="content" class="form-control" id="myTextarea" cols="30"
                                   rows="8">{{old('content')}}</textarea>
                         @error('content')
-                        <div class="alert alert-danger">{{ $message }}</div>
+                            <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="form-group">

@@ -27,6 +27,10 @@
             <h3 class="title">Đăng Nhập</h3>
         </div>
         <div class="content">
+            @if (session('status'))
+                <div class="alert alert-succses"
+                    style="background: none; border: none; padding: 5px 0 0 0; font-size: 16px">{{ session('status') }}</div>
+            @endif
             <form action="{{ route('user.login') }}" method="Post" id="submit-login">
                 @csrf
                 <div class="info-email">

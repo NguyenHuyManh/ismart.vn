@@ -20,12 +20,12 @@ class LoginController extends Controller
     {
         $validator = Validator::make($request->all(), 
             [
-                'email' => 'required|email',
+                'email' => 'required|email:rfc,dns',
                 'password' => 'required|min:6|max:32'
             ],
             [
                 'email.required' => 'Email không được để trống!',
-                'email.email' => 'Email không hợp lệ!',
+                'email.email' => 'Email không đúng định dạng!',
                 'password.required' => 'Mật khẩu không được để trống!',
                 'password.min' => 'Mật khẩu phải có ít nhất 6 kí tự!',
                 'password.max' => 'Mật khẩu tối đa 32 kí tự!',  

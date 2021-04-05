@@ -21,17 +21,17 @@
                 <p><strong>Địa chỉ:</strong> {{ $order->address }}</p>
             </div>
             <div class="form-group">
-                <p><strong>Số điện thoại:</strong> {{ $order->phone }}</p>   
+                <p><strong>Số điện thoại:</strong> {{ $order->phone }}</p>
             </div>
             <div class="form-group">
-                <p><strong>Nội dung:</strong> {{ $order->note }}</p>  
+                <p><strong>Nội dung:</strong> {{ $order->note }}</p>
             </div>
             <div class="form-group">
                 <p><strong>Thông tin vận chuyển:</strong> {{ $order->type_payment }}</p>
             </div>
             <div class="form-group">
-                <h5 class="">Tình trạng đơn hàng:</h5> 
-                    @csrf                    
+                <h5 class="">Tình trạng đơn hàng:</h5>
+                    @csrf
                     <div class="form-action form-inline mt-3">
                         <select class="form-control bg-light text-black mr-1 change-status" name="status">
                             @if($order->status == 1)
@@ -122,7 +122,7 @@
             </div>
             <div class="form-group">
                 <p><strong>Tổng đơn hàng:</strong> {{ number_format($order->total_money, '0', ',', '.') }}đ</p>
-            </div>  
+            </div>
             <div class="form-group">
                 <a class="btn btn-danger" target="_blank" href="{{ route('admin.order.print_order', ['id' => $order->id ])}}">In hóa đơn <i class="fas fa-print"></i></a>
                 {{-- <button type="button" class="btn btn-danger">In hóa đơn <i class="fas fa-print"></i></button> --}}

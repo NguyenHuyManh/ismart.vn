@@ -91,20 +91,20 @@
                                 </td>
                                 <td>{{ $item->created_at->format('H:i d-m-Y') }}</td>
                                 <td>
-                                    @can('detail-order')
-                                        <a href="{{route('admin.order.show', ['id' => $item->id])}}"
-                                           class="btn btn-primary btn-sm rounded text-white" type="button"
-                                           data-toggle="tooltip" data-placement="top" title="Xem"><i
-                                                class="far fa-eye"></i></a>
-                                    @endcan
+                                @can('detail-order')
+                                    <a href="{{route('admin.order.show', ['id' => $item->id])}}"
+                                        class="btn btn-primary btn-sm rounded text-white" type="button"
+                                        data-toggle="tooltip" data-placement="top" title="Xem"><i
+                                            class="far fa-eye"></i></a>
+                                @endcan
                                 </td>
                                 <td>
-                                    @can('delete-order')
-                                        <a href="{{ route('admin.order.destroy', ['id' => $item->id]) }}"
-                                           class="btn btn-danger btn-sm rounded text-white delete"
-                                           data-toggle="tooltip"
-                                           data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i></a>
-                                    @endcan
+                                @can('delete-order')    
+                                    <a href="{{ route('admin.order.destroy', ['id' => $item->id]) }}"
+                                        class="btn btn-danger btn-sm rounded text-white delete"
+                                        data-toggle="tooltip"
+                                        data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i></a>
+                                @endcan    
                                 </td>
                             </tr>
                         @endforeach

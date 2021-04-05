@@ -104,7 +104,7 @@
                             position: 'center',
                             icon: 'success',
                             title: result.message,
-                            showConfirmButton: false,
+                            showConfirmButton: true,
                             timer: 1500
                         });
                         $("#cart-wp #num").text(result.number_total);

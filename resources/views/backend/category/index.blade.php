@@ -39,11 +39,11 @@
             <div class="card-body">
                 <form action="{{ url('admin/category/action') }}">
                     <div class="form-action form-inline add-category">
-                        @can('add-category')
-                            <a href="{{route('admin.category.create')}}" class="btn btn-primary" role="button">Thêm mới
-                                <i
-                                    class="fas fa-plus"></i></a>
-                        @endcan
+                    @can('add-category')   
+                        <a href="{{route('admin.category.create')}}" class="btn btn-primary" role="button">Thêm mới
+                            <i
+                                class="fas fa-plus"></i></a>
+                    @endcan    
                     </div>
                     <table class="table table-hover table-checkall">
                         <thead>
@@ -83,21 +83,21 @@
                                     @endif
                                 </td>
                                 <td>
-                                    @can('edit-category')
-                                        <a href="{{route('admin.category.edit',['id' => $category->id])}}"
-                                           class="btn btn-success btn-sm rounded text-white" type="button"
-                                           data-toggle="tooltip" data-placement="top" title="Edit">
-                                            <i class="fas fa-pencil-alt"></i>  
-                                        </a>
-                                    @endcan
-                                    @can('delete-category')
-                                        <a href="{{route('admin.category.destroy',['id' => $category->id])}}"
-                                           class="btn btn-danger btn-sm rounded text-white delete"
-                                           data-toggle="tooltip"
-                                           data-placement="top" title="Delete">
-                                           <i class="fas fa-trash-alt"></i>
-                                        </a>
-                                    @endcan
+                                @can('edit-category')
+                                    <a href="{{route('admin.category.edit',['id' => $category->id])}}"
+                                        class="btn btn-success btn-sm rounded text-white" type="button"
+                                        data-toggle="tooltip" data-placement="top" title="Edit">
+                                        <i class="fas fa-pencil-alt"></i>  
+                                    </a>
+                                @endcan
+                                @can('delete-category')                                 
+                                    <a href="{{route('admin.category.destroy',['id' => $category->id])}}"
+                                        class="btn btn-danger btn-sm rounded text-white delete"
+                                        data-toggle="tooltip"
+                                        data-placement="top" title="Delete">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                @endcan
                                 </td>
                             </tr>
                         @endforeach

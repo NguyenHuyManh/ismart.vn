@@ -23,14 +23,14 @@
                         </div>
                         <div class="form-group">
                             <img src="" alt="" id="imgOut" class="img-thumbnail"
-                                    style="width: 200px">
+                                 style="width: 200px">
                         </div>
                         <div class="form-group">
                             <label for="" class="font-weight-bold">Trạng thái:</label>
                             <div class="form-check">
                                 <input type="hidden" name="status" value="0">
                                 <input type="checkbox" class="form-check-input" id="update-status" name="status"
-                                        value="1">
+                                       value="1">
                                 <label class="form-check-label" for="update-status">Hiển thị</label>
                             </div>
                         </div>
@@ -139,17 +139,18 @@
                     @foreach ($banners as $item)
                         <tr>
                             <td scope="row">{{$stt++}}</td>
-                            <td><img src="{{url($item->image)}}" class="img-thumbnail" id="{{ $item->id }}" style="width: 200px">
+                            <td><img src="{{url($item->image)}}" class="img-thumbnail" id="{{ $item->id }}"
+                                     style="width: 200px">
                             </td>
                             <td>
                                 @if ($item->status == 1)
                                     <a href="{{ route('admin.banner.update_status', ['id' => $item->id]) }}"
-                                       class="badge badge-success update-status" data-status="show" 
+                                       class="badge badge-success update-status" data-status="show"
                                        style="padding: 10px 10px; font-size: 13px; border-radius: 1.25rem !important">Hiển
                                         thị</a>
                                 @else
                                     <a href="{{ route('admin.banner.update_status', ['id' => $item->id]) }}"
-                                       class="badge badge-danger update-status" data-status="hiden" 
+                                       class="badge badge-danger update-status" data-status="hiden"
                                        style="padding: 10px 26px; font-size: 13px;border-radius: 1.25rem !important">Ẩn</a>
                                 @endif
                             </td>
@@ -169,7 +170,7 @@
                                     <a href="{{route('admin.banner.destroy', ['id' => $item->id])}}"
                                        class="btn btn-danger btn-sm rounded delete" data-toggle="tooltip"
                                        data-placement="top" title="Delete">
-                                       <i class="fas fa-trash-alt"></i>
+                                        <i class="fas fa-trash-alt"></i>
                                     </a>
                                 @endcan
                             </td>
@@ -184,28 +185,29 @@
 
 @section('script')
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
             //Reset image befor add
-            $('.add').on('click', function(){
+            $('.add').on('click', function () {
                 $('#imgInp2').val('');
                 $('#exampleCheck1').prop("checked", false);
                 $('#imgOut2').attr('src', 'http://localhost:8080/Laravel/ismart.vn/public/admin/images/images.png');
             });
-            
+
             // Sửa banner
-            $('.edit-banner').on('click', function(event){
+            $('.edit-banner').on('click', function (event) {
                 event.preventDefault();
                 $('#imgInp').val('');
                 let imgPath = $(this).parent().parent().find('.img-thumbnail').attr('src');
                 let statusItem = $(this).parent().parent().find('.update-status').attr('data-status');
                 let bannerId = $(this).attr('data-id');
-                let actionUpdate = 'http://localhost:8080/Laravel/ismart.vn/admin/banner/update/'+ bannerId;
-                $('#edit-banner').modal('show');
+                let actionUpdate = 'http://localhost:8080/Laravel/ismart.vn/admin/banner/update/' + bannerId;
+                setTimeout(function () {
+                    $('#edit-banner').modal('show');
+                }, 500);
                 $('#imgOut').attr('src', imgPath);
-                if(statusItem == 'show'){
+                if (statusItem == 'show') {
                     $('#update-status').prop("checked", true);
-                }
-                else{
+                } else {
                     $('#update-status').prop("checked", false);
                 }
                 $('#update-banner').attr('action', actionUpdate);

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-
 use App\Http\Requests\AddAdminRequest;
 use App\Http\Requests\UpdateAccountAdminRequest;
 use App\Role;
@@ -47,13 +46,13 @@ class AdminUserController extends Controller
         $admin = $this->user->create($data);
 
         //Cách 1: dùng vòng lặp
-//        $roleIds = $request->role_id;
-//        foreach ($roleIds as $item) {
-//            DB::table('role_admin')->insert([
-//                'role_id' => $item,
-//                'admin_id' => $user->id
-//            ]);
-//        }
+    //    $roleIds = $request->role_id;
+    //    foreach ($roleIds as $item) {
+    //        DB::table('role_admin')->insert([
+    //            'role_id' => $item,
+    //            'admin_id' => $admin->id
+    //        ]);
+    //    }
 
         //Cách 2: dùng relationship laravel
         $admin->roles()->attach($request->role_id);
@@ -89,6 +88,7 @@ class AdminUserController extends Controller
     {
         if ($request->ajax()) {
             $itemAdmin = $this->user->find($id)->delete();
+            DB::table('role_admin')->where('admin_id', $id)->delete();
             return response()->json([
                 'itemAdmin' => $itemAdmin,
                 'message' => 'ok'

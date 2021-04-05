@@ -48,10 +48,10 @@
             </div>
             <div class="card-body">
                 <div class="form-action form-inline add-category">
-                    @can('add-admin')
-                        <a href="{{route('admin.user.create')}}" class="btn btn-primary">Thêm mới <i
-                                class="fas fa-plus"></i></a>
-                    @endcan
+                @can('add-admin')    
+                    <a href="{{route('admin.user.create')}}" class="btn btn-primary">Thêm mới <i
+                            class="fas fa-plus"></i></a>
+                @endcan  
                 </div>
                 <table class="table table-hover">
                     <thead>
@@ -90,20 +90,20 @@
                                 @endif
                             </td>
                             <td>
-                                @can('edit-admin')
-                                    <a href="{{ route('admin.user.edit', ['id' => $admin->id]) }}"
-                                       class="btn btn-success btn-sm rounded text-white edit-admin"
-                                       data-toggle="tooltip" data-placement="top" title="Edit">
-                                        <i class="fas fa-pencil-alt"></i>
-                                    </a>
-                                @endcan
-                                @can('delete-admin')
-                                    <a href="{{ route('admin.user.destroy', ['id' => $admin->id]) }}"
-                                       class="btn btn-danger btn-sm rounded text-white delete"
-                                       data-toggle="tooltip" data-placement="top" title="Delete">
-                                       <i class="fas fa-trash-alt"></i>
-                                    </a>
-                                @endcan
+                            @can('edit-admin')      
+                                <a href="{{ route('admin.user.edit', ['id' => $admin->id]) }}"
+                                    class="btn btn-success btn-sm rounded text-white edit-admin"
+                                    data-toggle="tooltip" data-placement="top" title="Edit">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </a>
+                            @endcan
+                            @can('delete-admin')  
+                                <a href="{{ route('admin.user.destroy', ['id' => $admin->id]) }}"
+                                    class="btn btn-danger btn-sm rounded text-white delete"
+                                    data-toggle="tooltip" data-placement="top" title="Delete">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
+                            @endcan
                             </td>
                         </tr>
                     @endforeach

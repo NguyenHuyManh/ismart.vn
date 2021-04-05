@@ -33,8 +33,11 @@ class ForgotPasswordController extends Controller
     public function sendMailRessetPassword(Request $request)
     {
         $request->validate(
-            ['email' => 'required'],
-            ['email.required' => "Email không được để trống!"]
+            ['email' => 'required|email:rfc,dns'],
+            [
+                'email.required' => "Email không được để trống!",
+                'email.email' => "Email không đúng định dạng!"
+            ]
         );
 
         //Kiểm tra email có tồn tại trong CSDL k

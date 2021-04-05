@@ -12,6 +12,8 @@ use App\Http\Requests\LoginAdminRequest;
 use App\User;
 use App\Category;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class DashboardController extends Controller
 {
@@ -154,14 +156,40 @@ class DashboardController extends Controller
         return view('backend.auth.login');
     }
 
-    public function checklogin(LoginAdminRequest $request)
+    public function checklogin(Request $request)
     {
+        $validator = Validator::make($request->all(), 
+            [
+                'email' => 'required|email:rfc,dns',
+                'password' => 'required|min:6|max:32'
+            ],
+            [
+                'email.required' => 'Email không được để trống!',
+                'email.email' => 'Email không đúng định dạng!',
+                'password.required' => 'Mật khẩu không được để trống!',
+                'password.min' => 'Mật khẩu phải có ít nhất 6 kí tự!',
+                'password.max' => 'Mật khẩu tối đa 32 kí tự!',  
+            ]
+        );
+
+        if ($validator->fails()) {
+            return response()->json([
+                'error' => true,
+                'message' => $validator->errors()
+            ]);
+        }
+
         $email = $request->email;
         $password = $request->password;
         if (Auth::attempt(['email' => $email, 'password' => $password, 'active' => 1])) {
-            return redirect('admin/dashboard');
+            return response()->json([
+                'login' => 'success'
+            ]);
         } else {
-            return redirect()->back()->with('error', "Email hoặc mật khẩu không đúng!");
+            return response()->json([
+                'login' => 'error',
+                'message' => 'Email hoặc mật khẩu không đúng!'
+            ]);
         }
     }
 

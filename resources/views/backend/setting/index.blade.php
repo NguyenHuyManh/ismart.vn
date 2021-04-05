@@ -71,7 +71,9 @@
                                 </div>
                                 <input type="text" name="email" value="{{ $item->email }}" class="form-control" placeholder="Nhập email">
                             </div>
-                            <button type="submit" class="btn btn-primary">Lưu lại</button>
+                            @can('update-setting')
+                                <button type="submit" class="btn btn-primary">Lưu lại</button>
+                            @endcan
                         </div>
                     </div>
                 </form>

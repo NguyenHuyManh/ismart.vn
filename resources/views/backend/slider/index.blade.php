@@ -115,11 +115,11 @@
             </div>
             <div class="card-body">
                 <div class="form-action form-inline py-3" style="margin-bottom: 20px">
-                    @can('add-slider')
-                        <button type="button" class="btn btn-primary add" data-toggle="modal" data-target="#myModal">
-                            Thêm mới <i class="fas fa-plus"></i>
-                        </button>
-                    @endcan
+                @can('add-slider')   
+                    <button type="button" class="btn btn-primary add" data-toggle="modal" data-target="#myModal">
+                        Thêm mới <i class="fas fa-plus"></i>
+                    </button>
+                @endcan 
                 </div>
                 <table class="table table-hover table-checkall">
                     <thead>
@@ -156,20 +156,20 @@
                                 <span><i class="far fa-clock"></i> {{$slider->created_at->format('d-m-Y')}}</span>
                             </td>
                             <td>
-                                @can('edit-slider')
-                                    <a href="{{route('admin.slider.edit', ['id' => $slider->id])}}"
-                                       class="btn btn-success btn-sm rounded text-white edit-slider" data-id="{{ $slider->id }}"
-                                       data-toggle="tooltip" data-placement="top" title="Edit">
-                                        <i class="fas fa-pencil-alt"></i>  
-                                    </a>
-                                @endcan
-                                @can('delete-slider')
-                                    <a href="{{route('admin.slider.destroy', ['id' => $slider->id])}}"
-                                       class="btn btn-danger btn-sm rounded text-white delete"
-                                       data-toggle="tooltip" data-placement="top" title="Delete">
-                                       <i class="fas fa-trash-alt"></i>
-                                    </a>
-                                @endcan
+                            @can('edit-slider')      
+                                <a href="{{route('admin.slider.edit', ['id' => $slider->id])}}"
+                                    class="btn btn-success btn-sm rounded text-white edit-slider" data-id="{{ $slider->id }}"
+                                    data-toggle="tooltip" data-placement="top" title="Edit">
+                                    <i class="fas fa-pencil-alt"></i>  
+                                </a>
+                            @endcan
+                            @can('delete-slider')  
+                                <a href="{{route('admin.slider.destroy', ['id' => $slider->id])}}"
+                                    class="btn btn-danger btn-sm rounded text-white delete"
+                                    data-toggle="tooltip" data-placement="top" title="Delete">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
+                            @endcan    
                             </td>
                         </tr>
                     @endforeach
@@ -199,7 +199,9 @@
                 let statusItem = $(this).parent().parent().find('.update-status').attr('data-status');
                 let bannerId = $(this).attr('data-id');
                 let actionUpdate = 'http://localhost:8080/Laravel/ismart.vn/admin/slider/update/'+ bannerId;
-                $('#edit-slider').modal('show');
+                setTimeout(function(){
+                    $('#edit-slider').modal('show');
+                }, 500); 
                 $('#imgOut2').attr('src', imgPath);
                 if(statusItem == 'show'){
                     $('#update-status').prop("checked", true);

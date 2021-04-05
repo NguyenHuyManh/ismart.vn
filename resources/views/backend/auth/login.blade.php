@@ -17,23 +17,19 @@
                 {{ session('status')}}
             </div>
         @endif
-        <form class="login100-form validate-form" action="{{ route('admin.check_login') }}" method="POST">
+        <form class="login100-form validate-form" id="submit-login" action="{{ route('admin.check_login') }}" method="POST">
             @csrf
             <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
                 <span class="label-input100">Email</span>
-                <input class="input100" type="text" name="email" value="{{old('email')}}">
-                <span class="focus-input100"></span>
-                @error('email')
-                    <div class="alert alert-danger" style="background: none; border: none; padding: 5px 0 0 0; font-size: 16px">{{ $message }}</div>
-                @enderror
+                <input class="input100" type="text" id="email" name="email" value="{{old('email')}}">
+                <span class="focus-input100"></span>               
+                <div class="alert alert-danger error-email" style="background: none; border: none; padding: 5px 0 0 0; font-size: 16px"></div>             
             </div>
             <div class="wrap-input100 validate-input m-b-18" data-validate="Password is required">
                 <span class="label-input100">Mật khẩu</span>
-                <input class="input100" type="password" name="password">
+                <input class="input100" type="password" id="password" name="password">
                 <span class="focus-input100"></span>
-                @error('password')
-                    <div class="alert alert-danger" style="background: none; border: none; padding: 5px 0 0 0; font-size: 16px">{{ $message }}</div>
-                @enderror
+                <div class="alert alert-danger error-password" style="background: none; border: none; padding: 5px 0 0 0; font-size: 16px"></div>               
             </div>
             <div class="flex-sb-m w-full p-b-30">
 <!--                 <div class="contact100-form-checkbox">
@@ -54,9 +50,57 @@
                     Login
                 </button>
             </div>
-            @if (session('error'))
-                <div class="alert alert-dark" style="margin-top: 10px; background: none; border: none; padding: 5px 0 0 0; font-size: 16px">{{ session('error') }}</div>
-            @endif
+            <div class="alert alert-dark error-account" style="margin-top: 10px; background: none; border: none; padding: 5px 0 0 0; font-size: 16px"></div>
         </form>
     </div>
+@endsection
+
+@section('script')
+    <script>
+        $(document).ready(function(){
+            $('.error-email').hide();
+            $('.error-password').hide();
+            $('.error-account').hide();
+            $(document).on('submit', '#submit-login', function(e){
+                e.preventDefault();
+                let _token = $("input[name=_token]").val();
+                let url = $('#submit-login').attr('action');
+                let email = $('#email').val();
+                let password = $('#password').val();
+                
+                $.ajax({
+                    url : url,
+                    type: 'POST',
+                    data: {_token: _token, email: email, password: password},
+                    dataType: 'json',
+                    success: function(data){
+                        console.log(data);
+                        $('.error-email').hide();
+                        $('.error-password').hide();
+                        $('.error-account').hide();
+                        if(data.error == true) {
+                            if(data.message.email){
+                                $('.error-email').show();
+                                $('.error-email').text(data.message.email[0]);
+                            }
+                            if(data.message.password) {
+                                $('.error-password').show();
+                                $('.error-password').text(data.message.password[0]);
+                            }
+                        }
+                        if(data.login == 'success') {
+                            window.location.href = "{{ url('admin/dashboard') }}";
+                        }
+                        if(data.login == 'error') {
+                            $('.error-account').show();
+                            $('.error-account').text(data.message);
+                        }
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+            });
+        })
+    </script>
 @endsection

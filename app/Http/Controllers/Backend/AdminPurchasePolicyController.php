@@ -30,6 +30,19 @@ class AdminPurchasePolicyController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate(
+            [
+            
+                'title' => 'required|unique:purchase_policies',
+                'content' => 'required',
+            ],
+            [
+                'title.required' => 'Tên tiêu đề không được trống!',
+                'title.unique' => 'Tên tiêu đề không được trùng!',
+                'content.required' => 'Nội dung không được trống!',
+            ]
+        );
+
         $data = [
             'title' => $request->title,
             'slug' => $request->slug ?? Str::slug($request->title),
@@ -51,6 +64,17 @@ class AdminPurchasePolicyController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate(
+            [
+                'title' => 'required',
+                'content' => 'required',
+            ],
+            [
+                'title.required' => 'Tên tiêu đề không được trống!',
+                'content.required' => 'Nội dung không được trống!',
+            ]
+        );
+
         $itemUpdate = $this->purchase_policy->find($id);
 
         $itemUpdate->title = $request->title;

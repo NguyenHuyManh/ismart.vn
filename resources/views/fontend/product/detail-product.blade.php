@@ -86,7 +86,7 @@
     @if ($productSame->count() > 0)
         <div class="section" id="same-category-wp">
             <div class="section-head">
-                <h3 class="section-title">Cùng chuyên mục</h3>
+                <h3 class="section-title">Sản phẩm tương tự</h3>
             </div>
             <div class="section-detail">
                 <ul class="list-item">
@@ -139,13 +139,13 @@
                             icon: 'warning',
                             title: result.message,
                             timer: 3000
-                        })
+                        });
                     } else {
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
                             title: result.message,
-                            showConfirmButton: false,
+                            showConfirmButton: true,
                             timer: 1500
                         });
                         $("#cart-wp #num").text(result.number_total);

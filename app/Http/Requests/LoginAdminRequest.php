@@ -24,7 +24,7 @@ class LoginAdminRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required',
+            'email' => 'required|email:rfc,dns',
             'password' => 'required'
         ];
     }
@@ -33,6 +33,7 @@ class LoginAdminRequest extends FormRequest
     {
         return [
             'email.required' => 'Email không được để trống!',
+            'email.email' => 'Email không đúng định dạng!',
             'password.required' => 'Mật khẩu không được để trống!',
         ];
     }

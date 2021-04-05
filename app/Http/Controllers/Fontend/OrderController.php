@@ -29,7 +29,9 @@ class OrderController extends Controller
 
     public function checkOut()
     {
-
+        if(Cart::count() <= 0){
+            return back()->with('warning', 'Bạn chưa có đơn hàng nào trong giỏ hàng!');
+        }
         return view('fontend.checkout');
     }
 

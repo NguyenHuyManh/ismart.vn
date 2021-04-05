@@ -117,13 +117,13 @@
 
                                     </td>
                                     <td>
-                                        @can('delete-product')
+                                        
                                             <a href="{{route('admin.product.destroy', ['id' => $product->id])}}"
                                             class="btn btn-danger btn-sm rounded text-white delete"
                                             data-toggle="tooltip" data-placement="top" title="Delete">
                                             <i class="fas fa-trash-alt"></i>
                                             </a>
-                                        @endcan
+                                        
                                     </td>
                                 </tr>
                             @endforeach
